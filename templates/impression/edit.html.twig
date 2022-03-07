@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div class="col-12">
+
+<h3> Change Your comments</h3>
+
+
+
+{{ form_start(form) }}
+
+
+        {{ form_label(form.content, 'Your Impression') }}
+        {{ form_widget(form.content) }}
+        {{ form_errors(form.content) }}
+
+
+
+
+<button type="submit" class="m-3 btn btn-info"> Change</button>
+{{ form_end(form) }}</div>
+
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+    <form action=" {{ path('signin') }}" method="post">
+    <div class="form-group col-6 justify-content-center">
+        <label class="form-label mt-4">Floating labels</label>
+        <div class="form-floating mb-3">
+            <input name="_username" class="form-control" id="floatingInput" placeholder="Username">
+            <label for="floatingInput"> Username</label>
+        </div>
+        <div class="form-floating">
+            <input name="_password" class="form-control" id="floatingPassword" placeholder="Password">
+            <label for="floatingPassword">Password</label>
+        </div>
+    </div>
+
+        <button type="submit" class="btn btn-dark m-3">Log</button>
+
+    </form>
+
+
+
+
+
+
+{% endblock %}

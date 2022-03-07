@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello FilmController!{% endblock %}
+
+{% block body %}
+
+
+    {% for film in films %}
+
+    <div class="card border-secondary m-3 col-3" style="max-width: 20rem;">
+        <div class="card-header"> {{ film.name }}</div>
+        <div class="card-body">
+            <h4 class="card-title">   {{ film.director }}</h4>
+            <p class="card-text">    {{ film.description }}</p>
+            <img src="{{ vich_uploader_asset(film, 'imageFile') }}" style="width: 200px" alt="">
+            <p class="card-text"> Realease at: {{ film.createdAt|date('d_m_Y')}} </p>
+
+
+            <p> Created by {{ film.user.username }}</p>
+            <p> Likes: {{ film.likes|length }}</p>
+            <div class="justify-content-evenly">
+
+
+                <a class="btn btn-outline-secondary" href="{{ path('show_film', {id:film.id}) }}"> See</a>
+                <a class="btn btn-outline-secondary" href=" {{ path('edit_film', {id:film.id}) }}"> Edit</a>
+                <a class="btn btn-outline-secondary" href=" {{ path('delete_film', {id:film.id}) }}"> Delete</a>
+
+            </div>
+        </div>
+    </div>
+
+{% endfor %}
+
+
+
+{% endblock %}

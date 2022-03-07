@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+    {{ form_start(form)}}
+
+    {{ form_label(form.name, 'Name') }}
+    {{ form_widget(form.name) }}
+    {{ form_errors(form.name) }}
+
+    {{ form_label(form.director, 'Director') }}
+    {{ form_widget(form.director) }}
+    {{ form_errors(form.director) }}
+
+    {{ form_label(form.description, 'description') }}
+    {{ form_widget(form.description) }}
+    {{ form_errors(form.description) }}
+
+    {{ form_label(form.createdAt, 'Année de sortie') }}
+    {{ form_widget(form.createdAt) }}
+    {{ form_errors(form.createdAt) }}
+
+    {{ form_row(form.imageFile) }}
+
+
+
+
+    <button type="submit" class="btn btn-primary mt-3"> Create</button>
+
+    {{ form_end(form) }}
+
+
+
+
+
+
+{% endblock %}
